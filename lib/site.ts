@@ -1,0 +1,20 @@
+export const siteConfig = {
+  name: "Dust Front RTS Wiki",
+  shortName: "Dust Front RTS",
+  description:
+    "Dust Front RTS Wiki with beginner guides, factions, units, economy, base building, build orders, campaign systems, demo tips, and difficulty strategies.",
+  url: "https://dustfrontrts.example",
+  steamUrl: "https://store.steampowered.com/app/2610770/Dust_Front_RTS/",
+  demoUrl: "https://store.steampowered.com/app/4776100/Dust_Front_RTS_Demo/",
+  communityUrl: "https://steamcommunity.com/app/2610770/",
+  discussionsUrl: "https://steamcommunity.com/app/2610770/discussions/",
+  youtubeSearchUrl: "https://www.youtube.com/results?search_query=Dust+Front+RTS+trailer"
+};
+
+export const locales = [
+  { code: "en", label: "English", localName: "Dust Front RTS" },
+  { code: "de", label: "Deutsch", localName: "Dust Front RTS" },
+  { code: "es", label: "Espanol", localName: "Dust Front RTS" },
+  { code: "fr", label: "Francais", localName: "Dust Front RTS" },
+  { code: "zh", label: "中文", localName: "灰烬战争（Dust Front RTS）" }
+] as const;
