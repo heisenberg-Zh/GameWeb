@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Dust Front RTS",
   description:
     "Dust Front RTS Wiki with beginner guides, factions, units, economy, base building, build orders, campaign systems, demo tips, and difficulty strategies.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dust.openlink.net.cn",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dustfront.openlink.net.cn",
   steamUrl: "https://store.steampowered.com/app/2610770/Dust_Front_RTS/",
   demoUrl: "https://store.steampowered.com/app/4776100/Dust_Front_RTS_Demo/",
   communityUrl: "https://steamcommunity.com/app/2610770/",
