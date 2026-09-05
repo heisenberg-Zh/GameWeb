@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Crosshair, Factory, Map, ShieldCheck } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryRail } from "@/components/CategoryRail";
+import { VideoShowcase } from "@/components/VideoShowcase";
 import { articles, articleBySlug, articleHref } from "@/lib/articles";
 import { siteConfig } from "@/lib/site";
 
@@ -15,8 +16,21 @@ const startCards = [
 
 export default function HomePage() {
   const featured = articles.filter((article) => article.status !== "pending").slice(0, 6);
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: siteConfig.videos.trailer.title,
+    description: "Official 2025 trailer for Dust Front RTS from the developer channel RtsDimon.",
+    thumbnailUrl: siteConfig.videos.trailer.thumbnail,
+    uploadDate: siteConfig.videos.trailer.uploadDate,
+    duration: "PT1M36S",
+    embedUrl: `https://www.youtube-nocookie.com/embed/${siteConfig.videos.trailer.id}`,
+    url: `https://www.youtube.com/watch?v=${siteConfig.videos.trailer.id}`,
+    publisher: { "@type": "Organization", name: "RtsDimon" }
+  };
   return (
     <div className="shell">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Independent operational wiki / App 2610770</p>
@@ -42,6 +56,8 @@ export default function HomePage() {
           {startCards.map((card) => { const article = articleBySlug(card.slug)!; return <Link className="start-card" href={articleHref(article)} key={card.n}><span className="number">{card.n}</span><h3>{card.title}</h3><p>{card.copy}</p></Link>; })}
         </div>
       </section>
+
+      <VideoShowcase />
 
       <section className="section content-split">
         <div><p className="eyebrow">Game profile</p><h2>Industry before victory.</h2></div>
